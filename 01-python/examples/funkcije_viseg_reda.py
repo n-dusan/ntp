@@ -35,8 +35,9 @@ def reduce_primer():
 
 # 3.3 update_wrapper i wraps (ocuvamo naziv funkcije, dokumentaciju, ...)
 def my_decorator(f):
-    @wraps(f)
+    # @wraps(f)
     def wrapper(*args, **kwds):
+        """Ovo ovde"""
         print('Poziv dekorisane funkcije')
         return f(*args, **kwds)
 

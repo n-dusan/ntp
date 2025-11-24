@@ -1,0 +1,31 @@
+EntityModel:
+    //
+    simple_types*=SimpleType
+    entities+=Entity
+;
+
+Entity:
+    'entity' name=ID '{'
+        properties+=Property
+    '}'
+;
+
+Property:
+    // pogledati razliku
+    // name=ID ':' type=ID
+    // name=ID ':' type=[Entity]
+    name=ID ':' type=[Type]
+
+;
+
+Type:
+  SimpleType | Entity
+;
+
+SimpleType:
+  'type' name=ID
+;
+
+Comment:
+  /\/\/.*$/
+;

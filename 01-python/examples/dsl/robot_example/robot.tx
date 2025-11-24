@@ -1,0 +1,28 @@
+Program:
+    'begin'
+        // lista komandi
+        commands*=Command
+    'end'
+;
+
+// nece biti kreirana klasa Command, jer je u pitanju apstraktno pravilo
+Command:
+    InitialCommand | MoveCommand
+;
+
+InitialCommand:
+    'initial' x=INT ',' y=INT
+;
+
+MoveCommand:
+    direction=Direction (steps=INT)?
+;
+
+// nece biti kreiran objekat, jer je u pitanju match rule
+Direction:
+    "up" | "down" | "left" | "right"
+;
+
+Comment:
+  /\/\/.*$/
+;

@@ -7,19 +7,19 @@
 
 class Osoba:
     def __init__(self, ime="", prezime=""):
-        self.ime = ime
-        self.prezime = prezime
+        self._ime = ime
+        self._prezime = prezime
 
     @property
     def ime_i_prezime(self):
-        return "%s %s" % (self.ime, self.prezime)
+        return "%s %s" % (self._ime, self._prezime)
 
     @ime_i_prezime.setter
     def ime_i_prezime(self, tekst):
         delovi = tekst.strip().split()
         if len(delovi) != 2:
             raise ValueError("dozvoljeno je uneti samo ime i prezime")
-        self.ime, self.prezime = delovi[0].strip(), delovi[1].strip()
+        self._ime, self._prezime = delovi[0].strip(), delovi[1].strip()
 
 
 def main():
